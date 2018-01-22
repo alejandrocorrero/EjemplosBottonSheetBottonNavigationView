@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/mnuFrg1"
+        android:enabled="true"
+        android:icon="@drawable/ic_face_black_24dp"
+        android:title="@string/frg1"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mnuFrg2"
+        android:enabled="true"
+        android:icon="@drawable/ic_mood_bad_black_24dp"
+        android:title="@string/frg2"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mnuFrg3"
+        android:enabled="true"
+        android:icon="@drawable/ic_mood_black_24dp"
+        android:title="@string/frg3"
+        app:showAsAction="ifRoom" />
+</menu>
