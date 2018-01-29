@@ -21,7 +21,7 @@ public class FragmentAbout extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about, container, false);
-        TextView txtFrg=view.findViewById(R.id.txtFrg);
+        TextView txtFrg=view.findViewById(R.id.txtName);
         return view;
     }
 

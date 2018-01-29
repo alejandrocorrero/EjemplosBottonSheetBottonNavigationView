@@ -1,5 +1,7 @@
 package com.example.usuario.ejemplosbottonsheetbottonnavigationview.Ui.Image;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
@@ -15,7 +17,7 @@ import com.squareup.picasso.Picasso;
 
 public class ImageActivity extends AppCompatActivity {
      private BottomSheetBehavior bsb;
-
+    private static final String EXTRA_STUDENT = "EXTRA_STUDENT";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,12 +26,12 @@ public class ImageActivity extends AppCompatActivity {
     }
 
     private void initviews() {
-        Student student = new Student("Baldomero","66666666","https://qzprod.files.wordpress.com/2018/01/falon-heavy-elon-musk-spacex-rocket-static-fire-spacex.jpg?quality=80&strip=all&w=2400");
-        ImageView imageView = findViewById(R.id.ivContent);
+        Student student=getIntent().getParcelableExtra(EXTRA_STUDENT);ImageView imageView = findViewById(R.id.ivContent);
         Picasso.with(this).load(student.getPhotoUrl()).into(imageView);
         RelativeLayout rlPanel = findViewById(R.id.rlPanel);
         bsb = BottomSheetBehavior.from(rlPanel);
         setupBottomSheet(student);
+
     }
 
     private void setupBottomSheet(Student student) {
@@ -59,5 +61,11 @@ public class ImageActivity extends AppCompatActivity {
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
             }
         });
+    }
+
+    public static void start(Context context, Student student) {
+        Intent intent = new Intent(context, ImageActivity.class);
+        intent.putExtra(EXTRA_STUDENT, student);
+        context.startActivity(intent);
     }
 }

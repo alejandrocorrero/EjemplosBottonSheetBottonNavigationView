@@ -2,21 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/mnuFrg1"
+        android:id="@+id/mnuFrgImage"
         android:enabled="true"
         android:icon="@drawable/ic_face_black_24dp"
-        android:title="@string/frg1"
+        android:title="@string/frgImage"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/mnuFrg2"
+        android:id="@+id/mnuFrgData"
         android:enabled="true"
         android:icon="@drawable/ic_mood_bad_black_24dp"
-        android:title="@string/frg2"
+        android:title="@string/frgData"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/mnuFrg3"
+        android:id="@+id/mnuFrgAbout"
         android:enabled="true"
         android:icon="@drawable/ic_mood_black_24dp"
-        android:title="@string/frg3"
+        android:title="@string/frgAbout"
         app:showAsAction="ifRoom" />
 </menu>

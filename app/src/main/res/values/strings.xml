@@ -3,12 +3,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="frg1">fragment1</string>
-    <string name="frg2">fragment2</string>
-    <string name="frg3">fragment3</string>
+    <string name="frgImage">Image</string>
+    <string name="frgData">Data</string>
+    <string name="frgAbout">About</string>
+    <string name="frgAbout_text">Made by Alejandro Correro</string>
     <string name="frg_image_btn_txt">Detail</string>
-    <string name="frg_data_btn_txt">Options</string>
+    <string name="frg_data_btn_txt">Edit</string>
     <string name="frg_bottonsheet_save">Save</string>
     <string name="frg_bottonsheet_dial">Dial</string>
-    <string name="fragment_bottomsheet_options">options</string>
+    <string name="fragment_bottomsheet_options">Options</string>
+    <string name="fragment_data_lblName_text">Name:</string>
+    <string name="fragment_data_lblPhone_text">Phone:</string>
 </resources>
