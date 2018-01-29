@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/activity_fragment1_content"/>
+    <include layout="@layout/activity_image_detail_content"/>
 
     <include
         android:id="@+id/rlPanel"
-        layout="@layout/activity_fragment1_bottom_sheet"/>
+        layout="@layout/activity_image_detail_bottom_sheet"/>
 </android.support.design.widget.CoordinatorLayout>

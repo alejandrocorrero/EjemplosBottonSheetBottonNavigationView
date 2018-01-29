@@ -1,5 +1,6 @@
-package com.example.usuario.ejemplosbottonsheetbottonnavigationview;
+package com.example.usuario.ejemplosbottonsheetbottonnavigationview.Ui.Data;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,9 +9,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Fragment2 extends Fragment {
+import com.example.usuario.ejemplosbottonsheetbottonnavigationview.R;
+import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Ui.Data.DataActivity;
 
-    public Fragment2() {
+public class FragmentData extends Fragment {
+
+    public FragmentData() {
         // Required empty public constructor
     }
 
@@ -22,8 +26,9 @@ public class Fragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fragment2, container, false);
-        Button btnSee=view.findViewById(R.id.btnSee);
+        View view = inflater.inflate(R.layout.fragment_data, container, false);
+        Button btnOptions=view.findViewById(R.id.btnOptions);
+        btnOptions.setOnClickListener(view1 -> startActivity(new Intent(getContext(),DataActivity.class)));
         TextView txtFrg=view.findViewById(R.id.txtFrg);
         return view;
     }

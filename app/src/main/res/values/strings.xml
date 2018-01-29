@@ -6,5 +6,9 @@
     <string name="frg1">fragment1</string>
     <string name="frg2">fragment2</string>
     <string name="frg3">fragment3</string>
-    <string name="frg1_btn_txt">See</string>
+    <string name="frg_image_btn_txt">Detail</string>
+    <string name="frg_data_btn_txt">Options</string>
+    <string name="frg_bottonsheet_save">Save</string>
+    <string name="frg_bottonsheet_dial">Dial</string>
+    <string name="fragment_bottomsheet_options">options</string>
 </resources>
