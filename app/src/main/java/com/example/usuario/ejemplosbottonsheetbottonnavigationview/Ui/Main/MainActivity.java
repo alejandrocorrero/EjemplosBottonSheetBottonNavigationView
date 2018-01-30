@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     return true;
                 });
-        bottomNavigationView.findViewById(R.id.mnuFrgImage).performClick();
+       if(getSupportFragmentManager().findFragmentById(R.id.frameLayout)==null){
+           bottomNavigationView.findViewById(R.id.mnuFrgImage).performClick();
+       }
     }
 }

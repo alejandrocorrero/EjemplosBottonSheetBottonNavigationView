@@ -26,7 +26,8 @@ public class ImageActivity extends AppCompatActivity {
     }
 
     private void initviews() {
-        Student student=getIntent().getParcelableExtra(EXTRA_STUDENT);ImageView imageView = findViewById(R.id.ivContent);
+        Student student=getIntent().getParcelableExtra(EXTRA_STUDENT);
+        ImageView imageView = findViewById(R.id.ivContent);
         Picasso.with(this).load(student.getPhotoUrl()).into(imageView);
         RelativeLayout rlPanel = findViewById(R.id.rlPanel);
         bsb = BottomSheetBehavior.from(rlPanel);

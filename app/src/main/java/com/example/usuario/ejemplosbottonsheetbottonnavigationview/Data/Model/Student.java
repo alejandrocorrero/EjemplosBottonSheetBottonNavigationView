@@ -7,15 +7,28 @@ import android.os.Parcelable;
 public class Student implements Parcelable {
 
 
-    private final String name;
-    private final String phone;
-    private final String photoUrl;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
+    private  String name;
+    private  String phone;
+    private  String photoUrl;
 
     public Student(String name, String phone, String photoUrl) {
         this.name = name;
         this.phone = phone;
         this.photoUrl = photoUrl;
     }
+
 
 
     public String getPhotoUrl() {

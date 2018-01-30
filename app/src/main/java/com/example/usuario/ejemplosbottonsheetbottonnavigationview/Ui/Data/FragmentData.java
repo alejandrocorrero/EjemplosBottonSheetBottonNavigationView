@@ -1,6 +1,5 @@
 package com.example.usuario.ejemplosbottonsheetbottonnavigationview.Ui.Data;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,8 +10,6 @@ import android.widget.TextView;
 
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Data.Model.Student;
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.R;
-import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Ui.Data.DataActivity;
-import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Ui.Image.FragmentImage;
 
 public class FragmentData extends Fragment {
 
@@ -28,7 +25,8 @@ public class FragmentData extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_data, container, false);
         Button btnOptions=view.findViewById(R.id.btnOptions);
-        btnOptions.setOnClickListener(view1 -> startActivity(new Intent(getContext(),DataActivity.class)));
+
+
         TextView txtName=view.findViewById(R.id.txtName);
         TextView txtPhone=view.findViewById(R.id.txtPhone);
         Student student=getArguments().getParcelable(ARG_STUDENT);
@@ -36,6 +34,7 @@ public class FragmentData extends Fragment {
             txtName.setText(student.getName());
             txtPhone.setText(student.getPhone());
         }
+        btnOptions.setOnClickListener(view1 -> DataActivity.start(getContext(),student));
 
         return view;
     }

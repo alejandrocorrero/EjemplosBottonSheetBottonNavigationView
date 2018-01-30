@@ -9,7 +9,7 @@
     app:behavior_peekHeight="45dp"
     app:layout_behavior="@string/bottom_sheet_behavior"
     tools:ignore="Overdraw"
-    android:background="@color/colorAccent">
+    android:background="@android:color/transparent">
 
     <TextView
         android:id="@+id/lblName"

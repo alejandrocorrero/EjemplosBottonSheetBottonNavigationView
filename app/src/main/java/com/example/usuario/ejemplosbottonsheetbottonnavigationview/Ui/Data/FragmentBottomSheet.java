@@ -23,11 +23,16 @@ public class FragmentBottomSheet extends BottomSheetDialogFragment implements
 
     private Student student;
     private NavigationView navigationView;
+    private String name;
+    private String phone;
 
-    static FragmentBottomSheet newInstance(Student student) {
+    static FragmentBottomSheet newInstance(Student student, String name, String phone) {
         FragmentBottomSheet frg = new FragmentBottomSheet();
         Bundle arguments = new Bundle();
         arguments.putParcelable(ARG_STUDENT, student);
+        //TODO AGREGAR NOMBRE Y TELEFONO AL FRAGMENTO Y GUARDAR EN EL SAVE
+        arguments.putString(, name);
+        arguments.putString(, phone);
         frg.setArguments(arguments);
         return frg;
     }
@@ -117,7 +122,7 @@ public class FragmentBottomSheet extends BottomSheetDialogFragment implements
     }
 
     private void save() {
-
+student.setName();
     }
 
 
