@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Data.Database;
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.R;
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Data.Model.Student;
 
@@ -19,20 +20,22 @@ public class FragmentBottomSheet extends BottomSheetDialogFragment implements
         NavigationView.OnNavigationItemSelectedListener {
 
     private static final String ARG_STUDENT = "ARG_STUDENT";
+    private static final String ARG_NAME = "ARG_NAME";
+    private static final String ARG_PHONE = "ARG_PHONE";
     private static final int SHEET_PEAK_HEIGHT = 650;
 
     private Student student;
     private NavigationView navigationView;
     private String name;
     private String phone;
+    Database database;
 
     static FragmentBottomSheet newInstance(Student student, String name, String phone) {
         FragmentBottomSheet frg = new FragmentBottomSheet();
         Bundle arguments = new Bundle();
         arguments.putParcelable(ARG_STUDENT, student);
-        //TODO AGREGAR NOMBRE Y TELEFONO AL FRAGMENTO Y GUARDAR EN EL SAVE
-        arguments.putString(, name);
-        arguments.putString(, phone);
+        arguments.putString(ARG_NAME, name);
+        arguments.putString(ARG_PHONE, phone);
         frg.setArguments(arguments);
         return frg;
     }
@@ -58,6 +61,7 @@ public class FragmentBottomSheet extends BottomSheetDialogFragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        database = Database.getInstance();
         return inflater.inflate(R.layout.fragment_bottomsheet, container, false);
     }
 
@@ -97,6 +101,8 @@ public class FragmentBottomSheet extends BottomSheetDialogFragment implements
     private void obtainArguments() {
         if (getArguments() != null) {
             student = getArguments().getParcelable(ARG_STUDENT);
+            name = getArguments().getString(ARG_NAME);
+            phone = getArguments().getString(ARG_PHONE);
         }
     }
 
@@ -122,7 +128,8 @@ public class FragmentBottomSheet extends BottomSheetDialogFragment implements
     }
 
     private void save() {
-student.setName();
+        database.getStudent().setName(name);
+        database.getStudent().setPhone(phone);
     }
 
 

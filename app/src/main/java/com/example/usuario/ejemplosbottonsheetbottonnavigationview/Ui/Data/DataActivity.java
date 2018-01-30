@@ -2,15 +2,13 @@ package com.example.usuario.ejemplosbottonsheetbottonnavigationview.Ui.Data;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.usuario.ejemplosbottonsheetbottonnavigationview.R;
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Data.Model.Student;
-import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Ui.Image.ImageActivity;
+import com.example.usuario.ejemplosbottonsheetbottonnavigationview.R;
 
 public class DataActivity extends AppCompatActivity {
     private static final String EXTRA_STUDENT = "EXTRA_STUDENT";
