@@ -1,6 +1,8 @@
 package com.example.usuario.ejemplosbottonsheetbottonnavigationview.Ui.Data;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
@@ -124,7 +126,7 @@ public class FragmentBottomSheet extends BottomSheetDialogFragment implements
     }
 
     private void call() {
-
+        startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + database.getStudent().getPhone().trim())));
     }
 
     private void save() {

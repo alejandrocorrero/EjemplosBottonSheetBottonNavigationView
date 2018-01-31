@@ -7,21 +7,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Data.Database;
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Data.Model.Student;
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.R;
 
 public class DataActivity extends AppCompatActivity {
     private static final String EXTRA_STUDENT = "EXTRA_STUDENT";
     private static final String TAG_BOTTOMSHEET_FRAGMENT = "TAG_BOTTOMSHEET_FRAGMENT";
+    Callback callback;
+    Database database;
+    public interface Callback{
+        void setStudent();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_options);
+        database= Database.getInstance();
         initViews();
     }
 
     private void initViews() {
-        Student student= getIntent().getParcelableExtra(EXTRA_STUDENT);
+        Student student= database.getStudent();
         Button options = findViewById(R.id.btnEdit);
         EditText edtName=findViewById(R.id.edtName);
         EditText edtPhone=findViewById(R.id.edtPhone);

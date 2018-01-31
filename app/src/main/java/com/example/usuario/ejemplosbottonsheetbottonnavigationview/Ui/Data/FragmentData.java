@@ -16,7 +16,8 @@ public class FragmentData extends Fragment {
 
     private static final String ARG_STUDENT = "ARG_STUDENT";
     Database database;
-
+    TextView txtName;
+    TextView txtPhone;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +29,12 @@ public class FragmentData extends Fragment {
         View view = inflater.inflate(R.layout.fragment_data, container, false);
         Button btnOptions = view.findViewById(R.id.btnOptions);
         database = Database.getInstance();
-        TextView txtName = view.findViewById(R.id.txtName);
-        TextView txtPhone = view.findViewById(R.id.txtPhone);
+        txtName = view.findViewById(R.id.txtName);
+        txtPhone = view.findViewById(R.id.txtPhone);
         Student student = database.getStudent();
         txtName.setText(student.getName());
         txtPhone.setText(student.getPhone());
+
         btnOptions.setOnClickListener(view1 -> DataActivity.start(getContext(), student));
 
         return view;
@@ -46,4 +48,10 @@ public class FragmentData extends Fragment {
         return frg;
     }
 
+    @Override
+    public void onResume() {
+        txtName.setText(database.getStudent().getName());
+        txtPhone.setText(database.getStudent().getPhone());
+        super.onResume();
+    }
 }
