@@ -12,21 +12,24 @@ import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Data.Model.St
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.R;
 import com.squareup.picasso.Picasso;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class FragmentImage extends Fragment {
     private static final String ARG_STUDENT = "ARG_STUDENT";
+    @BindView(R.id.btnDetail)
+    Button btnSee;
+    @BindView(R.id.ivStudent)
+    ImageView imageView;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_image, container, false);
-        Button btnSee = view.findViewById(R.id.btnOptions);
-        ImageView imageView = view.findViewById(R.id.ivStudent);
-
+        ButterKnife.bind(this,view);
         Student student = getArguments().getParcelable(ARG_STUDENT);
         if (student != null) {
             Picasso.with(getContext()).load(student.getPhotoUrl()).into(imageView);
         }
-
         btnSee.setOnClickListener(view1 -> ImageActivity.start(getContext(), student));
         return view;
     }
@@ -38,5 +41,5 @@ public class FragmentImage extends Fragment {
         frg.setArguments(arguments);
         return frg;
     }
-//
+
 }

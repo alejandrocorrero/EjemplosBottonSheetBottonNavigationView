@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Sheet</string>
+
+    <string name="frgImage">Imagen</string>
+    <string name="frgData">Datos</string>
+    <string name="frgAbout">Acerca de</string>
+    <string name="frgAbout_text">Hecho por Alejandro Correro</string>
+    <string name="frg_image_btn_txt">Detalle</string>
+    <string name="frg_data_btn_txt">Editar</string>
+    <string name="frg_bottonsheet_save">Guardar</string>
+    <string name="frg_bottonsheet_dial">Marcar Numero</string>
+    <string name="fragment_bottomsheet_options">Opciones</string>
+    <string name="fragment_data_lblName_text">Nombre:</string>
+    <string name="fragment_data_lblPhone_text">Telefono:</string>
+    <string name="activity_data_options_lblName_text">Nombre:</string>
+    <string name="activity_data_options_lblPhone_text">Telefono:</string>
+    <string name="activity_data_options_lblOptions_text">Opciones</string>
+</resources>

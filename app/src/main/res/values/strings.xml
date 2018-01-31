@@ -14,4 +14,7 @@
     <string name="fragment_bottomsheet_options">Options</string>
     <string name="fragment_data_lblName_text">Name:</string>
     <string name="fragment_data_lblPhone_text">Phone:</string>
+    <string name="activity_data_options_lblName_text">Name:</string>
+    <string name="activity_data_options_lblPhone_text">Phone:</string>
+    <string name="activity_data_options_lblOptions_text">Options</string>
 </resources>

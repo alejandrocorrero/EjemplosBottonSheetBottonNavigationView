@@ -12,31 +12,32 @@ import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Data.Database
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Data.Model.Student;
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class FragmentData extends Fragment {
 
     private static final String ARG_STUDENT = "ARG_STUDENT";
     Database database;
+    @BindView(R.id.txtName)
     TextView txtName;
+    @BindView(R.id.txtPhone)
     TextView txtPhone;
+    @BindView(R.id.btnOptions)
+    Button btnOptions;
+    Student student;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_data, container, false);
-        Button btnOptions = view.findViewById(R.id.btnOptions);
+        ButterKnife.bind(this, view);
         database = Database.getInstance();
-        txtName = view.findViewById(R.id.txtName);
-        txtPhone = view.findViewById(R.id.txtPhone);
-        Student student = database.getStudent();
-        txtName.setText(student.getName());
-        txtPhone.setText(student.getPhone());
-
         btnOptions.setOnClickListener(view1 -> DataActivity.start(getContext(), student));
-
         return view;
     }
 
@@ -50,8 +51,9 @@ public class FragmentData extends Fragment {
 
     @Override
     public void onResume() {
-        txtName.setText(database.getStudent().getName());
-        txtPhone.setText(database.getStudent().getPhone());
+        student = database.getStudent();
+        txtName.setText(student.getName());
+        txtPhone.setText(student.getPhone());
         super.onResume();
     }
 }

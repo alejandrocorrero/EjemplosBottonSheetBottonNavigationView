@@ -15,9 +15,21 @@ import com.example.usuario.ejemplosbottonsheetbottonnavigationview.Data.Model.St
 import com.example.usuario.ejemplosbottonsheetbottonnavigationview.R;
 import com.squareup.picasso.Picasso;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ImageActivity extends AppCompatActivity {
-     private BottomSheetBehavior bsb;
+    @BindView(R.id.rlPanel)
+    RelativeLayout rlPanel;
+    @BindView(R.id.lblName)
+    TextView lblName;
+    @BindView(R.id.lblPhone)
+    TextView lblPhone;
+    @BindView(R.id.lblUrl)
+    TextView lblUrl;
+    private BottomSheetBehavior bsb;
     private static final String EXTRA_STUDENT = "EXTRA_STUDENT";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,42 +38,21 @@ public class ImageActivity extends AppCompatActivity {
     }
 
     private void initviews() {
-        Student student=getIntent().getParcelableExtra(EXTRA_STUDENT);
+        Student student = getIntent().getParcelableExtra(EXTRA_STUDENT);
         ImageView imageView = findViewById(R.id.ivContent);
         Picasso.with(this).load(student.getPhotoUrl()).into(imageView);
-        RelativeLayout rlPanel = findViewById(R.id.rlPanel);
+        ButterKnife.bind(this);
         bsb = BottomSheetBehavior.from(rlPanel);
         setupBottomSheet(student);
 
     }
 
     private void setupBottomSheet(Student student) {
-        TextView lblName= findViewById(R.id.lblName);
-        TextView lblPhone= findViewById(R.id.lblPhone);
-        TextView lblUrl= findViewById(R.id.lblUrl);
         lblName.setText(student.getName());
         lblPhone.setText(student.getPhone());
         lblUrl.setText(student.getPhotoUrl());
         bsb.setState(BottomSheetBehavior.STATE_EXPANDED);
-        bsb.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-            @Override
-            public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                switch (newState) {
-                    case BottomSheetBehavior.STATE_EXPANDED:
 
-                        break;
-                    case BottomSheetBehavior.STATE_COLLAPSED:
-                    case BottomSheetBehavior.STATE_HIDDEN:
-
-                        break;
-                    default:
-                }
-            }
-
-            @Override
-            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-            }
-        });
     }
 
     public static void start(Context context, Student student) {
