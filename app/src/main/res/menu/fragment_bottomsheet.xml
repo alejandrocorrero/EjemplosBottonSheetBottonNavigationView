@@ -10,9 +10,11 @@
                 android:id="@+id/mnuSave"
                 android:enabled="true"
                 android:title="@string/frg_bottonsheet_save"
+                android:icon="@drawable/ic_save_black_24dp"
                 app:showAsAction="ifRoom" />
             <item
                 android:id="@+id/mnuDial"
+                android:icon="@drawable/ic_call_black_24dp"
                 android:enabled="true"
                 android:title="@string/frg_bottonsheet_dial"
                 app:showAsAction="ifRoom" />
